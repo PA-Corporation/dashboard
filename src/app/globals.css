@@ -3,31 +3,52 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  /* colors */
+  --color-white: hsl(0, 0%, 100%);
+  --color-text: hsl(0 0% 100%);
+  --color-text-unselect: hsl(0 0% 100% / 0.6);
+  /* colors background */
+  --bg-black-100: hsl(0, 0%, 4%);
+  --bg-primary: hsl(219, 13%, 22%);
+  --bg-start: hsl(216, 18%, 16%);
+  --bg-end: hsl(0, 0%, 12%);
+  /* colors border */
+  --color-border-primary: hsl(280, 2%, 25%);
+  /* colors button */
+  --color-btn: transparent;
+  --color-btn-select: hsla(212.14 100% 38.43%);
+  --color-btn-hover: hsla(240 5.26% 26.08%);
+  /* border */
+  --border-primary: 0.8px solid var(--color-border-primary);
+  /* shadow */
+  --box-shadow: 5px 5px 15px 5px hsla(0, 0%, 10%, 0.1);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+  /* :root { */
+  /* --foreground-rgb: 255, 255, 255; */
+  /* --background-start-rgb: 0, 0, 0; */
+  /* --background-end-rgb: 0, 0, 0; */
+  /* } */
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: var(--color-text);
+  background: linear-gradient(to bottom, transparent, var(--bg-end))
+    var(--bg-start);
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.page {
+  height: 100%;
+  padding: 1.5rem;
+  background-color: var(--bg-black-100);
+  border: var(--border-primary);
+  border-radius: 20px;
+  box-shadow: var(--box-shadow);
 }
