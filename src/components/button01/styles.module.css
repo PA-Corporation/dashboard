@@ -1,0 +1,19 @@
+.btn {
+  min-height: 2.5rem;
+  background-color: var(--color-btn);
+  border-radius: 0.5rem;
+  padding-left: 10px;
+  color: var(--color-text-unselect);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.btn:hover {
+  background-color: var(--color-btn-hover);
+}
+
+.btn-active {
+  background-color: var(--color-btn-select);
+  color: var(--color-text);
+}

@@ -1,7 +1,7 @@
 export interface Section {
   name: string;
   href: string;
-  icon: any;
+  icon: React.ComponentType | null;
 }
 
 export interface SidebarProps {

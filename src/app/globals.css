@@ -7,29 +7,25 @@
   --color-white: hsl(0, 0%, 100%);
   --color-text: hsl(0 0% 100%);
   --color-text-unselect: hsl(0 0% 100% / 0.6);
+  --color-text-subtitle: hsla(240 3.83% 46.08%);
   /* colors background */
-  --bg-black-100: hsl(0, 0%, 4%);
+  --bg-transparent: hsla(0, 0%, 0%, 0);
+  --bg-black: hsl(0, 0%, 12%);
   --bg-primary: hsl(219, 13%, 22%);
   --bg-start: hsl(216, 18%, 16%);
   --bg-end: hsl(0, 0%, 12%);
   /* colors border */
   --color-border-primary: hsl(280, 2%, 25%);
+  --color-border-secundary: hsl(240 3.7% 15.88%);
   /* colors button */
   --color-btn: transparent;
   --color-btn-select: hsla(212.14 100% 38.43%);
   --color-btn-hover: hsla(240 5.26% 26.08%);
   /* border */
   --border-primary: 0.8px solid var(--color-border-primary);
+  --border-secundary: 1px solid var(--color-border-secundary);
   /* shadow */
   --box-shadow: 5px 5px 15px 5px hsla(0, 0%, 10%, 0.1);
-}
-
-@media (prefers-color-scheme: dark) {
-  /* :root { */
-  /* --foreground-rgb: 255, 255, 255; */
-  /* --background-start-rgb: 0, 0, 0; */
-  /* --background-end-rgb: 0, 0, 0; */
-  /* } */
 }
 
 body {
@@ -44,11 +40,21 @@ body {
   }
 }
 
+h2 {
+  color: var(--color-text);
+}
+
 .page {
   height: 100%;
   padding: 1.5rem;
-  background-color: var(--bg-black-100);
+  background-color: var(--bg-transparent);
   border: var(--border-primary);
   border-radius: 20px;
   box-shadow: var(--box-shadow);
+}
+
+.subtitle {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: var(--color-text-subtitle);
 }
