@@ -4,20 +4,53 @@ import {
   DropdownTrigger,
   DropdownMenu,
   DropdownItem,
+  DropdownSection,
 } from "@nextui-org/dropdown";
 import { Button } from "@nextui-org/react";
 import IconSelect from "@/public/icons/chevron-up-down";
+import IconPlusCircle from "@/public/icons/plus-circle";
 import styles from "./styles.module.css";
 
-export default function DropDown() {
-  const store = [
+// Definición de tipos
+type Item = {
+  key: string;
+  label: string;
+  description: string;
+  icon?: React.ElementType; // opcional
+};
+
+type Section = {
+  name: string;
+  items: Item[];
+};
+
+export default function DropDown({ onOpen }: any) {
+  const store: Section[] = [
     {
-      key: "VA",
-      label: "Valkyrie Army",
+      name: "Select a workspace",
+      items: [
+        {
+          key: "VA",
+          label: "Valkyrie Army",
+          description: "Core workspace",
+        },
+        {
+          key: "Flame",
+          label: "Flame Candel",
+          description: "Core workspace",
+        },
+      ],
     },
     {
-      key: "Flame",
-      label: "Flame Candel",
+      name: "Create a New workspace",
+      items: [
+        {
+          key: "Add",
+          label: "Add New",
+          description: "Create Workspace",
+          icon: IconPlusCircle,
+        },
+      ],
     },
   ];
 
@@ -30,21 +63,32 @@ export default function DropDown() {
           endContent={<IconSelect />}
         >
           <div className={styles["content-text"]}>
-            <h2>{store[0].label}</h2>
+            <h2>{store[0]?.items[1]?.label}</h2>
             <p className="subtitle">Core workspace</p>
           </div>
         </Button>
       </DropdownTrigger>
       <DropdownMenu aria-label="Dynamic Actions" items={store}>
-        {(item) => (
-          <DropdownItem
-            key={item.key}
-            description="Core workspace"
-            onPress={() => console.log(`🚀 select: ${item.label}`)}
+        {store.map((section, index) => (
+          <DropdownSection
+            key={section.name}
+            title={section.name}
+            items={section.items}
+            showDivider={index === store.length - 1 ? false : true}
           >
-            {item.label}
-          </DropdownItem>
-        )}
+            {section.items.map((item) => (
+              <DropdownItem
+                key={item.key}
+                description={item.description}
+                onPress={onOpen}
+                // onPress={() => console.log(`🚀 select: ${item.label}`)}
+                endContent={item.icon ? <item.icon /> : null}
+              >
+                {item.label}
+              </DropdownItem>
+            ))}
+          </DropdownSection>
+        ))}
       </DropdownMenu>
     </Dropdown>
   );

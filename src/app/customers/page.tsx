@@ -1,9 +1,7 @@
-import MainLayout from "@/components/mainlayout/layout";
-
 export default function Customers() {
   return (
-    <MainLayout>
+    <main className="page">
       <h1>Customers Page</h1>
-    </MainLayout>
+    </main>
   );
 }

@@ -12,8 +12,10 @@ import IconStore from "@/public/icons/store";
 import IconBell from "@/public/icons/bell";
 import Button01 from "../button01/layout";
 import styles from "./styles.module.css";
-import { Badge, Button } from "@nextui-org/react";
+import { Badge, Button, useDisclosure } from "@nextui-org/react";
 import DropDown from "../dropdown/layout";
+import ModalCreate from "../modal/layout";
+import UserComponent from "../userClerk/layout";
 
 const sections: Section[] = [
   { name: "Home", href: "/", icon: IconHome },
@@ -27,6 +29,8 @@ const sections: Section[] = [
 ];
 
 function Sidebar({ path }: SidebarProps) {
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
+
   return (
     <main className={styles["container"]}>
       <section className={styles["section-container"]}>
@@ -52,7 +56,8 @@ function Sidebar({ path }: SidebarProps) {
             </Button>
           </Badge>
         </div>
-        <DropDown />
+        <DropDown onOpen={onOpen} />
+        <ModalCreate isOpen={isOpen} onOpenChange={onOpenChange} />
         <nav className={styles["nav"]}>
           {sections.map((section, index) => (
             <div key={index}>
@@ -61,6 +66,7 @@ function Sidebar({ path }: SidebarProps) {
           ))}
         </nav>
         <p>Notification</p>
+        <UserComponent />
       </section>
     </main>
   );

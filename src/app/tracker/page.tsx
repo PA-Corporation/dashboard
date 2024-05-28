@@ -1,9 +1,7 @@
-import MainLayout from "@/components/mainlayout/layout";
-
 export default function Tracker() {
   return (
-    <MainLayout>
+    <main className="page">
       <h1>Tracker Page</h1>
-    </MainLayout>
+    </main>
   );
 }

@@ -1,9 +1,7 @@
-import MainLayout from "@/components/mainlayout/layout";
-
 export default function Supplies() {
   return (
-    <MainLayout>
+    <main className="page">
       <h1>Supplies Page</h1>
-    </MainLayout>
+    </main>
   );
 }

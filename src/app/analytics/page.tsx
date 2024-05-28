@@ -1,9 +1,7 @@
-import MainLayout from "@/components/mainlayout/layout";
-
 export default function Analytics() {
   return (
-    <MainLayout>
+    <main className="page">
       <h1>Analytics Page</h1>
-    </MainLayout>
+    </main>
   );
 }
