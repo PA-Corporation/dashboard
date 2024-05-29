@@ -1,9 +1,7 @@
-import MainLayout from "@/components/mainlayout/layout";
-
 export default function Team() {
   return (
-    <MainLayout>
+    <main className="page">
       <h1>Team Page</h1>
-    </MainLayout>
+    </main>
   );
 }

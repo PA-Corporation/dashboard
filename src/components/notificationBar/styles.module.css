@@ -1,0 +1,21 @@
+.notification-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  background-color: var(--bg-primary);
+  padding: 1rem;
+}
+
+.notification-title {
+  color: var(--color-text);
+}
+
+.notification-subtitle {
+  color: var(--color-text-unselect);
+  font-size: 0.75rem;
+  text-align: center;
+  margin: 1rem 0;
+}

@@ -1,6 +1,7 @@
 "use client";
 
-import { Section, SidebarProps } from "@/types";
+import { Section } from "@/types";
+import { Badge, Button, useDisclosure } from "@nextui-org/react";
 import IconHome from "@/public/icons/icon-home";
 import IconPuzzle from "@/public/icons/puzzle-piece";
 import IconSquare from "@/public/icons/square-plus";
@@ -11,11 +12,12 @@ import IconBills from "@/public/icons/bills";
 import IconStore from "@/public/icons/store";
 import IconBell from "@/public/icons/bell";
 import Button01 from "../button01/layout";
-import styles from "./styles.module.css";
-import { Badge, Button, useDisclosure } from "@nextui-org/react";
 import DropDown from "../dropdown/layout";
 import ModalCreate from "../modal/layout";
 import UserComponent from "../userClerk/layout";
+import NotificationBar from "../notificationBar/layout";
+import styles from "./styles.module.css";
+import { usePathname } from "next/navigation";
 
 const sections: Section[] = [
   { name: "Home", href: "/", icon: IconHome },
@@ -28,11 +30,12 @@ const sections: Section[] = [
   { name: "Tracker", href: "/tracker", icon: IconTruck },
 ];
 
-function Sidebar({ path }: SidebarProps) {
+function Sidebar() {
+  const path = usePathname();
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   return (
-    <main className={styles["container"]}>
+    <aside className={styles["container"]}>
       <section className={styles["section-container"]}>
         <div className={styles["title-panel"]}>
           <p>Dashboard</p>
@@ -60,15 +63,13 @@ function Sidebar({ path }: SidebarProps) {
         <ModalCreate isOpen={isOpen} onOpenChange={onOpenChange} />
         <nav className={styles["nav"]}>
           {sections.map((section, index) => (
-            <div key={index}>
-              <Button01 data={section} path={path} />
-            </div>
+            <Button01 key={index} data={section} path={path} />
           ))}
         </nav>
-        <p>Notification</p>
+        <NotificationBar />
         <UserComponent />
       </section>
-    </main>
+    </aside>
   );
 }
 

@@ -65,3 +65,9 @@ h2 {
   line-height: 1rem;
   color: var(--color-text-subtitle);
 }
+
+.mainApp {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+}

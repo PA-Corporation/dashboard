@@ -2,17 +2,11 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import MainLayout from "@/components/mainlayout/layout";
 import { NextUIProvider } from "@nextui-org/react";
-import {
-  ClerkLoaded,
-  ClerkLoading,
-  ClerkProvider,
-  RedirectToSignIn,
-  SignedIn,
-  SignedOut,
-} from "@clerk/nextjs";
+import { ClerkProvider, SignedIn } from "@clerk/nextjs";
+import ClerkSignedOut from "@/components/clerkSignedOut/layout";
+import Sidebar from "@/components/sidebar/layout";
 
 import "./globals.css";
-import Loading from "@/components/loading/layout";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -32,17 +26,12 @@ export default function RootLayout({
         <body className={inter.className}>
           <NextUIProvider>
             <SignedIn>
-              <MainLayout>{children}</MainLayout>
+              <main className="mainApp">
+                <Sidebar />
+                <MainLayout>{children}</MainLayout>
+              </main>
             </SignedIn>
-            <SignedOut>
-              <ClerkLoading>
-                <Loading />
-              </ClerkLoading>
-              <ClerkLoaded>
-                <RedirectToSignIn />
-                {children}
-              </ClerkLoaded>
-            </SignedOut>
+            <ClerkSignedOut children={children} />
           </NextUIProvider>
         </body>
       </html>

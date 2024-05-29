@@ -1,7 +1,8 @@
 import React from "react";
-import { Button, Link } from "@nextui-org/react";
-import styles from "./styles.module.css";
+import { Button } from "@nextui-org/react";
+import Link from "next/link";
 import { Section } from "@/types";
+import styles from "./styles.module.css";
 
 interface Button01Props {
   data: Section;
