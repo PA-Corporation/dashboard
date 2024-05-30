@@ -8,6 +8,8 @@
   --color-text: hsl(0 0% 100%);
   --color-text-unselect: hsl(0 0% 100% / 0.6);
   --color-text-subtitle: hsla(240 3.83% 46.08%);
+  /* hover */
+  --color-hover: hsl(240, 5%, 26%);
   /* colors background */
   --bg-transparent: hsla(0, 0%, 0%, 0);
   --bg-black: hsl(0, 0%, 12%);

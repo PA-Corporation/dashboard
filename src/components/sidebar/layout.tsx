@@ -38,7 +38,7 @@ function Sidebar() {
     <aside className={styles["container"]}>
       <section className={styles["section-container"]}>
         <div className={styles["title-panel"]}>
-          <p>Dashboard</p>
+          <h2>Dashboard</h2>
           <Badge
             size="md"
             color="danger"
