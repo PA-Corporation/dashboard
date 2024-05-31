@@ -1,0 +1,97 @@
+.btn {
+  min-height: 4rem;
+  background-color: var(--bg-primary);
+  border-radius: 0.5rem;
+  padding: 0.75rem 2rem;
+  color: var(--color-text);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 1rem;
+}
+
+.btn:hover {
+  background-color: var(--color-btn-hover);
+}
+
+.btnCreate {
+  min-height: 4rem;
+  background-color: var(--color-btn-select);
+  border-radius: 0.5rem;
+  padding: 0.75rem 2rem;
+  color: var(--color-text);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 1rem;
+}
+
+.btnCreate:hover {
+  background-color: var(--color-btn-select);
+}
+
+.drop-menu {
+  background-color: var(--bg-primary);
+}
+
+/* Table styles */
+.wrapper {
+  background-color: var(--bg-primary);
+  max-height: 45rem;
+}
+
+.th {
+  background-color: var(--bg-black);
+  color: var(--default-400);
+}
+
+.td {
+  padding: 8px;
+}
+
+.tr {
+  height: 3.5rem;
+}
+
+.tr:hover {
+  background-color: var(--color-btn-hover);
+}
+
+.tbody {
+  height: 100%;
+  display: table-row-group;
+}
+
+.pgWrapper {
+  background-color: var(--bg-primary);
+}
+
+.pgItem {
+  background-color: var(--bg-primary);
+}
+
+.pgCursor {
+  background-color: var(--bg-primary);
+}
+
+.pgPrev {
+  background-color: var(--bg-primary);
+  color: var(--color-text);
+}
+
+.pgPrev:hover {
+  color: var(--color-black);
+}
+
+.pgNext {
+  background-color: var(--bg-primary);
+  color: var(--color-text);
+}
+
+.pgNext:hover {
+  color: var(--color-black);
+}
+
+.pgCursor {
+  background-color: var(--bg-primary);
+}

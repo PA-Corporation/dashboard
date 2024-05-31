@@ -5,9 +5,13 @@
 :root {
   /* colors */
   --color-white: hsl(0, 0%, 100%);
+  --color-black: hsl(0, 0%, 0%);
   --color-text: hsl(0 0% 100%);
   --color-text-unselect: hsl(0 0% 100% / 0.6);
   --color-text-subtitle: hsla(240 3.83% 46.08%);
+  --color-danger: hsl(339 90% 51%);
+  --color-success: hsl(145.96000000000004 79.46% 43.92%);
+  --color-alert: hsl(37.02999999999997 91.27% 55.1%);
   /* hover */
   --color-hover: hsl(240, 5%, 26%);
   /* colors background */
@@ -60,6 +64,9 @@ h2 {
   border: var(--border-primary);
   border-radius: 20px;
   box-shadow: var(--box-shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .subtitle {

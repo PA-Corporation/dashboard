@@ -1,15 +1,9 @@
-import InputSearch from "@/components/inputs/input_search";
-import styles from "./styles.module.css";
+import TableListProduct from "@/components/tableProducts/layout";
 
 export default function Products() {
   return (
     <main className="page">
-      <section className={styles["section-search"]}>
-        <InputSearch />
-      </section>
-      <section>
-        <h2>Items lists</h2>
-      </section>
+      <TableListProduct />
     </main>
   );
 }
