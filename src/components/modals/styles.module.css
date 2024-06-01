@@ -1,0 +1,16 @@
+.modal {
+  background-color: var(--bg-primary);
+}
+
+.modalBody {
+  display: flex;
+  flex-direction: row;
+}
+
+.sectionLeft,
+.sectionRight {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}

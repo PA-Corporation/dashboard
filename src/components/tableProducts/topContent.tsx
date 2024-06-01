@@ -1,16 +1,20 @@
+import InputSearch from "../inputs/input_search";
+import ChevronDown from "@/public/icons/chevron-down";
+import PlusCircle from "@/public/icons/plus-circle";
 import {
   Button,
   Dropdown,
   DropdownItem,
   DropdownMenu,
   DropdownTrigger,
+  useDisclosure,
 } from "@nextui-org/react";
-import InputSearch from "../inputs/input_search";
-import ChevronDown from "@/public/icons/chevron-down";
-import PlusCircle from "@/public/icons/plus-circle";
 import styles from "./styles.module.css";
+import ModalCreateProduct from "../modals/createProduct";
 
 const TopContent = ({ statusOptions, statusFilter, setStatusFilter }) => {
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
+
   return (
     <div className="flex flex-col gap-5">
       <div className="flex flex-row justify-between gap-5">
@@ -40,10 +44,13 @@ const TopContent = ({ statusOptions, statusFilter, setStatusFilter }) => {
               ))}
             </DropdownMenu>
           </Dropdown>
+          {/* Modal - Create Product */}
+          <ModalCreateProduct isOpen={isOpen} onOpenChange={onOpenChange} />
           <Button
             variant="solid"
             className={styles["btnCreate"]}
             endContent={<PlusCircle strokeWidth={2} />}
+            onPress={onOpen}
           >
             Create Product
           </Button>

@@ -13,7 +13,7 @@ import IconStore from "@/public/icons/store";
 import IconBell from "@/public/icons/bell";
 import Button01 from "../button01/layout";
 import DropDown from "../dropdown/layout";
-import ModalCreate from "../modal/layout";
+import ModalCreate from "../modals/createWorkspace";
 import UserComponent from "../userClerk/layout";
 import NotificationBar from "../notificationBar/layout";
 import styles from "./styles.module.css";
