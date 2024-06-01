@@ -14,6 +14,7 @@ import InputPrimary from "../inputs/input";
 import InputTextare from "../inputs/input_textarea";
 import InputDate from "../inputs/input_date";
 import { getLocalTimeZone, today } from "@internationalized/date";
+import SelectAsync from "../select/layout";
 
 type Modal = {
   isOpen: boolean;
@@ -29,6 +30,7 @@ const ModalCreateProduct: React.FC<Modal> = ({ isOpen, onOpenChange }) => {
     name: "",
     description: "",
     date: today(getLocalTimeZone()).toString(),
+    status: "",
   });
 
   const handleInputChange = (name: string, value: string | DateValue) => {
@@ -83,6 +85,28 @@ const ModalCreateProduct: React.FC<Modal> = ({ isOpen, onOpenChange }) => {
                 <InputDate
                   onValueChange={(value) => handleInputChange("date", value)}
                 />
+                <p>Supplies:</p>
+                <div>
+                  <SelectAsync />
+                  <div className={styles["supplies-info"]}>
+                    <InputPrimary
+                      type={"number"}
+                      label={"Quantity"}
+                      placeholder={"0"}
+                      onValueChange={(value) => console.log(value)}
+                    />
+                    <InputPrimary
+                      type={"number"}
+                      label={"Cost"}
+                      placeholder={"0"}
+                      onValueChange={(value) => console.log(value)}
+                      disable={true}
+                      startContent={
+                        <span className="text-color-black text-small">$</span>
+                      }
+                    />
+                  </div>
+                </div>
               </section>
             </ModalBody>
             <ModalFooter>

@@ -27,10 +27,10 @@ const styles = {
   ],
   inputWrapper: [
     "shadow-md",
-    "bg-color-white/80",
+    "bg-color-white",
     "backdrop-blur-xl",
     "backdrop-saturate-200",
-    "hover:!bg-color-white",
+    "hover:!bg-color-white/80",
     "focus-within:!bg-color-white",
     "!cursor-text",
   ],

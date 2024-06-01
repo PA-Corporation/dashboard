@@ -13,6 +13,8 @@ type Input = {
   description?: string;
   required?: boolean;
   onValueChange: (value: string) => void;
+  disable?: boolean;
+  startContent?: string | undefined | any;
 };
 
 const styles = {
@@ -29,17 +31,17 @@ const styles = {
   ],
   inputWrapper: [
     "shadow-md",
-    "bg-color-white/80",
+    "bg-color-white",
     "backdrop-blur-xl",
     "backdrop-saturate-200",
-    "hover:!bg-color-white",
+    "hover:!bg-color-white/80",
     "focus-within:!bg-color-white",
     "!cursor-text",
   ],
 };
 
 const InputPrimary: React.FC<Input> = ({
-  type,
+  type = undefined,
   label,
   placeholder,
   radius = "sm",
@@ -47,6 +49,8 @@ const InputPrimary: React.FC<Input> = ({
   description,
   required,
   onValueChange,
+  disable = false,
+  startContent = undefined,
 }) => {
   const [value, setValue] = useState("");
 
@@ -57,7 +61,7 @@ const InputPrimary: React.FC<Input> = ({
 
   return (
     <Input
-      type={type ? type : undefined}
+      type={type}
       label={label}
       isClearable={false}
       radius={radius}
@@ -68,6 +72,8 @@ const InputPrimary: React.FC<Input> = ({
       value={value}
       onChange={handleChange}
       isRequired={required ? required : false}
+      isDisabled={disable}
+      startContent={startContent}
     />
   );
 };
